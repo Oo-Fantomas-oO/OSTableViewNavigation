@@ -32,8 +32,9 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="NQk-L1-EMW"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hqq-dQ-g69" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <barButtonItem title="Item" id="GeH-Lh-eHr"/>
             </objects>
-            <point key="canvasLocation" x="442" y="143"/>
+            <point key="canvasLocation" x="-486" y="-141"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Qt0-OU-Rjr">
@@ -49,7 +50,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lhe-mM-Btp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-478" y="143"/>
+            <point key="canvasLocation" x="-1277" y="-141"/>
         </scene>
     </scenes>
 </document>
