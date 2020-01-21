@@ -32,7 +32,11 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="NQk-L1-EMW"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hqq-dQ-g69" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <barButtonItem title="Item" id="GeH-Lh-eHr"/>
+                <barButtonItem title="Item" id="GeH-Lh-eHr">
+                    <connections>
+                        <segue destination="nP3-2e-cXS" kind="push" identifier="navigateDeep" id="Gud-o1-WmF"/>
+                    </connections>
+                </barButtonItem>
             </objects>
             <point key="canvasLocation" x="-486" y="-141"/>
         </scene>

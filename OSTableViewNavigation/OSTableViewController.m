@@ -11,6 +11,7 @@
 @interface OSTableViewController ()
 
 @property (strong, nonatomic) NSArray *contents;
+@property (strong, nonatomic) NSString *selectedPath;
 
 @end
 
@@ -138,6 +139,8 @@
 //        vc.path = path;
 //        [self.navigationController pushViewController:vc animated:YES] ;//инициализация с storyboard
         
+        self.selectedPath = path;
+        
         [self performSegueWithIdentifier:@"navigateDeep" sender:nil];
     }
     
@@ -154,5 +157,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(nullable id)sender {
     NSLog(@"prepareForSegue: %@", segue.identifier);
+    
+    OSTableViewController *vc = segue.destinationViewController;
+    vc.path = self.selectedPath;
 }
 @end

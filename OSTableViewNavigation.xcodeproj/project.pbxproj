@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B879D34123D7A7FF003AFF96 /* OSDummyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B879D34023D7A7FF003AFF96 /* OSDummyViewController.m */; };
 		B88D409323D24AA5009BA1DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B88D409223D24AA5009BA1DB /* AppDelegate.m */; };
 		B88D409623D24AA5009BA1DB /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B88D409523D24AA5009BA1DB /* SceneDelegate.m */; };
 		B88D409923D24AA5009BA1DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B88D409823D24AA5009BA1DB /* ViewController.m */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B879D33F23D7A7FF003AFF96 /* OSDummyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSDummyViewController.h; sourceTree = "<group>"; };
+		B879D34023D7A7FF003AFF96 /* OSDummyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSDummyViewController.m; sourceTree = "<group>"; };
 		B88D408E23D24AA5009BA1DB /* OSTableViewNavigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSTableViewNavigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B88D409123D24AA5009BA1DB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B88D409223D24AA5009BA1DB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -70,6 +73,8 @@
 			children = (
 				B8F3193723D4C03D000E6AD1 /* OSTableViewController.h */,
 				B8F3193823D4C03D000E6AD1 /* OSTableViewController.m */,
+				B879D33F23D7A7FF003AFF96 /* OSDummyViewController.h */,
+				B879D34023D7A7FF003AFF96 /* OSDummyViewController.m */,
 				B8F3193A23D4C721000E6AD1 /* Images */,
 				B88D409123D24AA5009BA1DB /* AppDelegate.h */,
 				B88D409223D24AA5009BA1DB /* AppDelegate.m */,
@@ -170,6 +175,7 @@
 				B88D409923D24AA5009BA1DB /* ViewController.m in Sources */,
 				B88D409323D24AA5009BA1DB /* AppDelegate.m in Sources */,
 				B88D40A423D24AA8009BA1DB /* main.m in Sources */,
+				B879D34123D7A7FF003AFF96 /* OSDummyViewController.m in Sources */,
 				B8F3193923D4C03D000E6AD1 /* OSTableViewController.m in Sources */,
 				B88D409623D24AA5009BA1DB /* SceneDelegate.m in Sources */,
 			);
