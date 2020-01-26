@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(id) initWithFolderPath:(NSString *) path;
 
+- (IBAction)actionInfoCell:(UIButton *)sender;
+
 @end
 
 NS_ASSUME_NONNULL_END

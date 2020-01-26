@@ -7,6 +7,7 @@
 //
 
 #import "OSTableViewController.h"
+#import "OSFileCell.h"
 
 @interface OSTableViewController ()
 
@@ -94,6 +95,30 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
+
+- (IBAction)actionInfoCell:(UIButton *)sender {
+    
+    NSLog(@"actionInfoCell");
+    
+}
+
+-(NSString *) fileSizeFromValue:(unsigned long long) size {
+    
+    static NSString *units[] = {@"B", @"KB", @"MB", @"GB", @"TB"};
+    static int unitsCount = 5;
+        
+    double fileSize = (double)size;
+    
+    int index = 0;
+    while (fileSize > 1024 && index < unitsCount) {
+        fileSize /= 1024;
+        index++;
+    }
+    
+    return [NSString stringWithFormat:@"%.2f %@", fileSize, units[index]];
+    
+}
+
 #pragma mark - UITableViewDataSource
 
 
@@ -103,27 +128,54 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *cellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
+    static NSString *fileIdentifier = @"FileCell";
+    static NSString *folderIdentifier = @"FolderCell";
     
     NSString *fileName = [self.contents objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = fileName;
-    
     if ([self isDirectoryAtIndexPath:indexPath]) {
-        cell.imageView.image = [UIImage imageNamed:@"folder.png"];
-    } else {
-        cell.imageView.image = [UIImage imageNamed:@"file.png"];
-    }
     
-    return cell;
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:folderIdentifier];
+    
+        cell.textLabel.text = fileName;
+        
+        return cell;
+        
+    } else {
+        
+        NSString *path = [self.path stringByAppendingPathComponent:fileName];
+        
+        NSDictionary *atributes = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil];
+        
+        OSFileCell *cell = [tableView dequeueReusableCellWithIdentifier:fileIdentifier];
+        
+        
+        cell.nameLabel.text = fileName;
+        cell.sizeLabel.text = [self fileSizeFromValue:[atributes fileSize]];
+        
+        static NSDateFormatter *dateFormatter = nil;
+        if (!dateFormatter) {
+            dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"MM/dd/yyyy hh:mm a"];
+        }
+        cell.dateLabel.text = [dateFormatter stringFromDate:[atributes fileModificationDate]];
+        
+        return cell;
+    }
+
+    return nil;
 }
 
 #pragma mark - UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if ([self isDirectoryAtIndexPath:indexPath]) {
+        return 44.f;
+    } else {
+        return 80.f;
+    }
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -161,4 +213,5 @@
     OSTableViewController *vc = segue.destinationViewController;
     vc.path = self.selectedPath;
 }
+
 @end

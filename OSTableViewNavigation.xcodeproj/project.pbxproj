@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B816E8DC23DCCF920024E2F1 /* OSFileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B816E8DB23DCCF920024E2F1 /* OSFileCell.m */; };
 		B879D34123D7A7FF003AFF96 /* OSDummyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B879D34023D7A7FF003AFF96 /* OSDummyViewController.m */; };
 		B88D409323D24AA5009BA1DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B88D409223D24AA5009BA1DB /* AppDelegate.m */; };
 		B88D409623D24AA5009BA1DB /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B88D409523D24AA5009BA1DB /* SceneDelegate.m */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B816E8DA23DCCF920024E2F1 /* OSFileCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSFileCell.h; sourceTree = "<group>"; };
+		B816E8DB23DCCF920024E2F1 /* OSFileCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSFileCell.m; sourceTree = "<group>"; };
 		B879D33F23D7A7FF003AFF96 /* OSDummyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSDummyViewController.h; sourceTree = "<group>"; };
 		B879D34023D7A7FF003AFF96 /* OSDummyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSDummyViewController.m; sourceTree = "<group>"; };
 		B88D408E23D24AA5009BA1DB /* OSTableViewNavigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSTableViewNavigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +55,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B816E8DD23DCCFCC0024E2F1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B816E8DA23DCCF920024E2F1 /* OSFileCell.h */,
+				B816E8DB23DCCF920024E2F1 /* OSFileCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		B88D408523D24AA4009BA1DB = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +87,7 @@
 				B8F3193823D4C03D000E6AD1 /* OSTableViewController.m */,
 				B879D33F23D7A7FF003AFF96 /* OSDummyViewController.h */,
 				B879D34023D7A7FF003AFF96 /* OSDummyViewController.m */,
+				B816E8DD23DCCFCC0024E2F1 /* Cells */,
 				B8F3193A23D4C721000E6AD1 /* Images */,
 				B88D409123D24AA5009BA1DB /* AppDelegate.h */,
 				B88D409223D24AA5009BA1DB /* AppDelegate.m */,
@@ -172,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B816E8DC23DCCF920024E2F1 /* OSFileCell.m in Sources */,
 				B88D409923D24AA5009BA1DB /* ViewController.m in Sources */,
 				B88D409323D24AA5009BA1DB /* AppDelegate.m in Sources */,
 				B88D40A423D24AA8009BA1DB /* main.m in Sources */,
