@@ -8,6 +8,7 @@
 
 #import "OSTableViewController.h"
 #import "OSFileCell.h"
+#import "UIView+UITableViewCell.h"
 
 @interface OSTableViewController ()
 
@@ -99,6 +100,26 @@
 - (IBAction)actionInfoCell:(UIButton *)sender {
     
     NSLog(@"actionInfoCell");
+    
+    UITableViewCell *cell = [sender superCell];
+    
+    if (cell) {
+        NSIndexPath* indexPath = [self.tableView indexPathForCell:cell];
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"NumberOfCell"
+                                                                       message:[NSString stringWithFormat:@"section %ld row %ld", indexPath.section, indexPath.row]
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *actionOk = [UIAlertAction actionWithTitle:@"OK"
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction * _Nonnull action) {
+            NSLog(@"OK button is present");
+        }];
+        
+        //NSLog(@"action %ld %ld", indexPath.section, indexPath.row);
+        [alert addAction:actionOk];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
     
 }
 
